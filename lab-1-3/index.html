@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Number : <span id="count">0</span> </h4>
+    <button onclick="increase()">Increase</button>
+</body>
+<script>
+    var oldnumber = document.getElementById("count");
+    var counter =0;
+    function increase(){
+            counter++;
+      oldnumber.innerHTML=counter;
+    }
+</script>
+</html>

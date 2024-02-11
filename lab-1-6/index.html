@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Case</title>
+</head>
+<body>
+    <h1 id="text">SUNDAY</h1>
+    <button onclick="change()">Change Case</button>
+
+    <script>
+        var textarea = document.getElementById("text");
+
+        function change() {
+            var text = textarea.textContent; // Get the content of the element
+
+            let resultString = '';
+            for (let i = 0; i < text.length; i++) {
+                let currentChar = text.charAt(i);
+                if (currentChar === currentChar.toUpperCase()) {
+                    resultString += currentChar.toLowerCase();
+                } else {
+                    resultString += currentChar.toUpperCase();
+                }
+            }
+            textarea.innerHTML = resultString;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Day</title>
+    <style>
+        #dayname{
+            color:green;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h4{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #checkbtn{
+            background-color: greenyellow;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Number of Day of a Week</h4>
+    <input type="number" name="" id="num"> 
+    <button onclick="check()" id="checkbtn">Check</button>
+    <h4 id="dayname"></h4>
+</body>
+<script>
+    var day=document.getElementById("dayname");
+    function check(){
+        var number= document.getElementById("num").value;
+       
+        if(number==1){
+            day.innerHTML=" The Day is Sunday";
+        }else if(number == 2){
+            day.innerHTML=" The Day is Monday";
+        }else if(number == 3){
+            day.innerHTML=" The Day is Tuesday";
+        }else if(number == 4){
+            day.innerHTML=" The Day is Wednesday";
+        }else if(number == 5){
+            day.innerHTML=" The Day is Thursday";
+        }else if(number == 6){
+            day.innerHTML=" The Day is Friday";
+        }else if(number == 7){
+            day.innerHTML=" The Day is Saturday";
+        }else{
+            day.innerHTML="Invalid Day";
+        }
+        
+    }
+</script>
+</html>

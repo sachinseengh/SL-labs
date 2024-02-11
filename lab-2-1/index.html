@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation using js</title>
+</head>
+<body>
+    <h3 id="txt">click to submit</h3>
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    var text = document.getElementById("txt");
+    function submit(){
+
+        if(confirm("Are you sure want to submit")==true){
+            text.innerHTML="Submitted Successfully";
+        }else{
+            text.innerHTML ="Failed";
+        }
+    }
+</script>
+</html>

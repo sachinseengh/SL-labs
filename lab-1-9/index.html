@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+        label{
+            display: block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact Us</h1>
+
+    <form id="contactForm" onsubmit="return validateForm()" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error"></span><br>
+
+        <label for="address">address:</label>
+        <input type="text" id="address" name="address"></textarea>
+        <span id="addressError" class="error"></span><br>
+
+
+        <label for="tel">Telephone:</label>
+        <input type="tel" id="tel" name="tel"></textarea>
+        <span id="telError" class="error"></span><br>
+
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get form inputs
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var tel = document.getElementById("tel").value;
+
+            // Reset error addresss
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("addressError").innerHTML = "";
+            document.getElementById("telError").innerHTML = "";
+            
+            // Validate Name
+            if (name === "") {
+                document.getElementById("nameError").innerHTML = "Name is required";
+                return false;
+            }
+
+            // Validate Email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+                document.getElementById("emailError").innerHTML = "Invalid email address";
+                return false;
+            }
+
+            // Validate address
+            if (address === "") {
+                document.getElementById("addressError").innerHTML = "address is required";
+                return false;
+            }
+
+            if(tel == ""){
+                document.getElementById("telError").innerHTML ="Telephone required";
+                return false; 
+            }
+            var telregex  =/^[0-9]+$/;
+            if(!tel.match(telregex)){
+                document.getElementById("telError").innerHTML ="Invalid telephone";
+                return false;
+            }
+
+            // If all validations pass, the form is submitted
+            return true;
+        }
+    </script>
+
+</body>
+</html>

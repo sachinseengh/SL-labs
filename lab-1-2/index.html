@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Content using js</title>
+</head>
+<body>
+    <div id="content">Initial Content</div>
+</body>
+<script>
+
+    var oldcontent = document.getElementById("content");
+    document.addEventListener("DOMContentLoaded",function(){
+        setTimeout(function(){
+            
+            var newcontent ="This is the new content";
+            oldcontent.innerHTML = newcontent;
+        },2000)
+    });
+</script>
+</html>

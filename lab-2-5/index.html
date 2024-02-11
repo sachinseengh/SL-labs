@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Examples</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Mouse Events -->
+<div id="mouseEventDiv" onmouseover="mouseOverEvent()" onmouseout="mouseOutEvent()">Mouse Event</div>
+
+<!-- Keyboard Events -->
+<input type="text" id="keyboardInput" onkeydown="keyDownEvent()" placeholder="Type something">
+
+<!-- Form Events -->
+<form onsubmit="formSubmitEvent()">
+    <label for="submitButton">Form Event:</label>
+    <input type="submit" id="submitButton" value="Submit">
+</form>
+
+<script>
+    // Mouse Events
+    function mouseOverEvent() {
+        document.getElementById("mouseEventDiv").style.backgroundColor = "lightgreen";
+    }
+
+    function mouseOutEvent() {
+        document.getElementById("mouseEventDiv").style.backgroundColor = "lightblue";
+    }
+
+    // Keyboard Events
+    function keyDownEvent() {
+        alert("Key down event detected!");
+    }
+
+    // Form Events
+    function formSubmitEvent() {
+        alert("Form submitted!");
+    }
+</script>
+
+</body>
+</html>
